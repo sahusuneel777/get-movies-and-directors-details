@@ -43,7 +43,7 @@ const convertDirectorDbObjectToResponseObject = (dbObject) => {
   };
 };
 
-///get all movies API
+///get all movies API 
 
 app.get("/movies/", async (request, response) => {
   const getAllMoviesQuery = `
