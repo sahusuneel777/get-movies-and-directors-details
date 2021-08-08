@@ -48,7 +48,7 @@ const convertDirectorDbObjectToResponseObject = (dbObject) => {
 app.get("/movies/", async (request, response) => {
   const getAllMoviesQuery = `
     SELECT
-        movie.movie_name
+        movie_name
     FROM 
         movie`;
   const moviesArray = await dataBase.all(getAllMoviesQuery);
@@ -113,8 +113,8 @@ app.put("/movies/:movieId/", async (request, response) => {
 app.delete("/movies/:movieId/", async (request, response) => {
   const { movieId } = request.params;
   const deletingQuery = `
-    SELECT *
-    FROM movie
+    DELETE FROM 
+      movie
     WHERE movie_id = ${movieId};`;
 
   await dataBase.run(deletingQuery);
